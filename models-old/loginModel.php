@@ -12,7 +12,7 @@ class loginModel  {
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$conn = new PDO("mysql:host=$servername;dbname=business", $username, $password);
+		$conn = new PDO("mysql:host=$servername;dbname=listing", $username, $password);
 			// set the PDO error mode to exception
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->objDatabase = $conn;
@@ -52,7 +52,7 @@ class loginModel  {
 		$result['data'] = '';
 		try {
 			$stmt = 'SELECT *
-			 FROM `user_registration` 
+			 FROM `user_details` 
 			 WHERE ';
 			
 			if( isset($data_array['first_name']) && $data_array['first_name'] != NULL){
